@@ -1,7 +1,8 @@
 # Lending Club Project
 # Submitted by Dr. Parul Shah & Dhanshree Vyas
-> Outline a brief description of your project.
 
+## INTRODUCTION 
+In this case study, we are trying to solve a real business problems using EDA. This case study is to learn how to apply the techniques we have learnt in EDA. This will help us in developing a basic understanding of risk analytics in banking and financial services and understand how data is used to minimise the risk of losing money while lending to customers.
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -12,7 +13,6 @@
 <!-- You can include any other section that is pertinent to your problem -->
 
 ## General Information
-- INTRODUCTION: We are trying to solve a real business problems using EDA. This case study is to learn how to apply the techniques we have learnt in EDA. This will elp us in developing a basic understanding of risk analytics in banking and financial services and understand how data is used to minimise the risk of losing money while lending to customers.
 
 - BACKGROUND: This consumer finance company, 'Lending Club', specialises in lending various types of loans to urban customers. When the company receives a loan application, the company has to make a decision for loan approval based on the applicant’s profile. Two types of risks are associated with the bank’s decision:
 1) If the applicant is likely to repay the loan, then not approving the loan results in a loss of business to the company
@@ -20,24 +20,24 @@
 
 In this case study, we will use EDA to understand how consumer attributes and loan attributes influence the tendency of default.
 
-- PROLEM STATEMENT: This company is the largest online loan marketplace, facilitating personal loans, business loans, and financing of medical procedures. Borrowers can easily access lower interest rate loans through a fast online interface. 
+- PROBLEM STATEMENT: This company is the largest online loan marketplace, facilitating personal loans, business loans, and financing of medical procedures. Borrowers can easily access lower interest rate loans through a fast online interface. 
 
-Like most other lending companies, lending loans to ‘risky’ applicants is the largest source of financial loss (called credit loss). Credit loss is the amount of money lost by the lender when the borrower refuses to pay or runs away with the money owed. In other words, borrowers who default cause the largest amount of loss to the lenders. In this case, the customers labelled as 'charged-off' are the 'defaulters'. 
+    Like most other lending companies, lending loans to ‘risky’ applicants is the largest source of financial loss (called credit loss). Credit loss is the amount of money lost by the lender when the borrower refuses to pay or runs away with the money owed. In other words, borrowers who default cause the largest amount of loss to the lenders. In this case, the customers labelled as 'charged-off' are the 'defaulters'. 
 
-If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.
+    If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.
 
-So our goal is to identify and understand the driving factors (or driver variables) behind loan default, i.e. the variables which are strong indicators of default.  The company can utilise this knowledge for its portfolio and risk assessment. 
+    So our goal is to identify and understand the driving factors (or driver variables) behind loan default, i.e. the variables which are strong indicators of default.  The company can utilise this knowledge for its portfolio and risk assessment. 
  
 - DATA USED:
 The data given used (loan.csv) contains information about past loan applicants and whether they ‘defaulted’ or not. The aim is to identify patterns which indicate if a person is likely to default, which may be used for taking actions such as denying the loan, reducing the amount of loan, lending (to risky applicants) at a higher interest rate, etc.
 
-When a person applies for a loan, there are two types of decisions that could be taken by the company:
-1) Loan accepted: If the company approves the loan, there are 3 possible scenarios described below:
-    a) Fully paid: Applicant has fully paid the loan (the principal and the interest rate)
-    b) Current: Applicant is in the process of paying the instalments, i.e. the tenure of the loan is not yet completed. These candidates are not labelled as 'defaulted'.
-    c) Charged-off: Applicant has not paid the instalments in due time for a long period of time, i.e. he/she has defaulted on the loan 
+    When a person applies for a loan, there are two types of decisions that could be taken by the company:
+    1) Loan accepted: If the company approves the loan, there are 3 possible scenarios described below:
+        a) Fully paid: Applicant has fully paid the loan (the principal and the interest rate)
+        b) Current: Applicant is in the process of paying the instalments, i.e. the tenure of the loan is not yet completed. These candidates are not labelled as 'defaulted'.
+        c) Charged-off: Applicant has not paid the instalments in due time for a long period of time, i.e. he/she has defaulted on the loan 
 
-2) Loan rejected: The company had rejected the loan (because the candidate does not meet their requirements etc.). Since the loan was rejected, there is no transactional history of those applicants with the company and so this data is not available with the company (and thus in this dataset)
+    2) Loan rejected: The company had rejected the loan (because the candidate does not meet their requirements etc.). Since the loan was rejected, there is no transactional history of those applicants with the company and so this data is not available with the company (and thus in this dataset)
 
 
 
@@ -71,6 +71,8 @@ This lead us in analysing further on what are the purposes that fall under Grade
 - Purpose of loan:
     Conclusion 1: Once again it shows that loans taken for debt_consolidation is highly likely to default and hence they are high-risk. Process to sanction them should be tightened.
     Conclusion 2: Same sould be done for 'Other', 'Credit_card' and 'small_business' catagories. They too look like high-risk loans
+- Home Ownership:
+    To our surprise, ratio of Fully paid / Defaulted for Mortgage is higher compared to other catagories pointing to low-risk. This might be because if the house is already on mortgage, defaulting means losing it completely and so the borrowers will try their best to repay.
 - Interest rates: 
     Conclusion 1: 50% of fully paid loans av int_rate under 11 (approxximately) and 50% of defaulters have int_rate between 11 to 16. So we can safely conclude that int_rate of < = 11 can result into low-risk loans
     Conclusion 2: Maximum int_rate in fully-paid is 22 (not considering outliers). Which means loans with int_rate > 22 are high-risk and sure shot defaulters. 
@@ -83,6 +85,20 @@ This lead us in analysing further on what are the purposes that fall under Grade
     Conclusion 1:  The first plot indicates clearly that number of 'Not Verified' borrowers who have fully paid is siggnificantly higher than 'Source Verified' or 'Verified' catagory.
     Conclusion 2: Second graph shows that number of 'Non-verified' defaulters is very close to 'Verified' defaulters with slight higher number
     Conclusion 3: This is a very serious concern. It looks like the verification process itself is faulty and needs to be evaluated and revised.
+
+## Summary
+Exploratory Data Analysis of Lending Club data gave some very important insights which can help the company in reducing the risk while giving loans in future.
+- Attributes of a Low-Risk Loan:
+    - Grade A or B & Sub-grade - A1 to C3 
+    - 36 months term, interest rate which is less than 11, monthly installments size which is less tan 400$
+- Attributes of a high-risk Loan: 
+    - Grade G, Sub-grades F3 and above
+    - Purpose of taking loan as debt consolidation / credit card / small business / other
+    - interest rate wich is more than 22, monthly installments which is greter than 800$ 
+    
+To our surprise, ratio of Fully paid / Defaulted for Mortgage is higher compared to other catagories pointing to low-risk. This might be because if the house is already on mortgage, defaulting means losing it completely and so the borrowers will try their best to repay.
+
+The most important finding was that non-verified loans are more likelyy to fully pay tan the verified ones, which cannot be true for obvious reasons. The whole point of verifying borrower's information is to reduce risk. This indicates that the verification process that is followed is flawed and needs some major revision.
 
 
 ## Technologies Used
