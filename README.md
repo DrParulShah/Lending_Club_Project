@@ -95,7 +95,7 @@ Exploratory Data Analysis of Lending Club data gave some very important insights
     - Grade G, Sub-grades F3 and above
     - Purpose of taking loan as debt consolidation / credit card / small business / other
     - interest rate wich is more than 22, monthly installments which is greter than 800$ 
-    
+
 To our surprise, ratio of Fully paid / Defaulted for Mortgage is higher compared to other catagories pointing to low-risk. This might be because if the house is already on mortgage, defaulting means losing it completely and so the borrowers will try their best to repay.
 
 The most important finding was that non-verified loans are more likelyy to fully pay tan the verified ones, which cannot be true for obvious reasons. The whole point of verifying borrower's information is to reduce risk. This indicates that the verification process that is followed is flawed and needs some major revision.
@@ -109,6 +109,8 @@ The most important finding was that non-verified loans are more likelyy to fully
 
 ## Acknowledgements
 - This case study was done as part of our UpGrad course project for EDA
+- We would like to thank Anand sir for empowering us with tools of of EDA, Sajan sir for introducing us to the world of open source repository and how we can contribute to it, and Behzad sir for strengthening our python coding skills
+
 
 
 ## Contact
